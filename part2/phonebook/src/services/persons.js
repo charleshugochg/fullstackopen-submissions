@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'http://localhost:3001'
+const baseUrl = 'https://polar-crag-65053.herokuapp.com/api'
 
 const getAll = () => {
   return axios
