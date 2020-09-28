@@ -61,6 +61,10 @@ const App = (props) => {
         setMessage(`Added ${createdPerson.name}`)
         setTimeout(() => setMessage(null), 5000)
       })
+      .catch(err => {
+        setError(err.response.data.error)
+        setTimeout(() => setError(null), 5000)
+      })
 
     setNewPerson('')
     setNewPhone('')
