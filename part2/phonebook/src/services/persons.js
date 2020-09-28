@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const baseUrl = 'https://polar-crag-65053.herokuapp.com/api'
+const baseUrl = 'api/persons'
 
 const getAll = () => {
   return axios
-    .get(`${baseUrl}/persons`)
+    .get(`${baseUrl}`)
     .then(res => {
       return res.data
     })
@@ -12,7 +12,7 @@ const getAll = () => {
 
 const create = (person) => {
   return axios
-    .post(`${baseUrl}/persons`, person)
+    .post(`${baseUrl}`, person)
     .then(res => {
       return res.data
     })
@@ -20,13 +20,13 @@ const create = (person) => {
 
 const update = (person) => {
   return axios
-    .put(`${baseUrl}/persons/${person.id}`, person)
+    .put(`${baseUrl}/${person.id}`, person)
     .then(res => res.data)
 }
 
 const remove = (id) => {
   return axios
-    .delete(`${baseUrl}/persons/${id}`)
+    .delete(`${baseUrl}/${id}`)
     .then(res => res.data)
 }
 
