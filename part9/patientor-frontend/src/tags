@@ -1,0 +1,58 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/e852ee0e/
+Action	state/reducer.ts	/^export type Action =$/;"	a
+BaseEntry	types.ts	/^export interface BaseEntry {$/;"	i
+Diagnosis	types.ts	/^export interface Diagnosis {$/;"	i
+Discharge	types.ts	/^export interface Discharge {$/;"	i
+Entry	types.ts	/^export type Entry = HospitalEntry | OccupationalHealthcare| HealthCheck;$/;"	a
+Female	types.ts	/^  Female = "female",$/;"	e	enum:Gender
+Gender	types.ts	/^export enum Gender {$/;"	g
+HealthCheck	types.ts	/^export interface HealthCheck extends BaseEntry {$/;"	i
+HealthCheckRating	types.ts	/^export enum HealthCheckRating {$/;"	g
+HospitalEntry	types.ts	/^export interface HospitalEntry extends BaseEntry {$/;"	i
+Male	types.ts	/^  Male = "male",$/;"	e	enum:Gender
+OccupationalHealthcare	types.ts	/^export interface OccupationalHealthcare extends BaseEntry {$/;"	i
+Other	types.ts	/^  Other = "other"$/;"	e	enum:Gender
+Patient	types.ts	/^export interface Patient {$/;"	i
+SickLeave	types.ts	/^export interface SickLeave {$/;"	i
+addPatient	state/reducer.ts	/^export const addPatient = (patient: Patient): Action => ({$/;"	C
+apiBaseUrl	constants.ts	/^export const apiBaseUrl = 'http:\/\/localhost:3001\/api';$/;"	C
+assertNever	utils.ts	/^export const assertNever = (value: never): never => {$/;"	C
+code	types.ts	/^  code: string;$/;"	p	interface:Diagnosis
+criteria	types.ts	/^  criteria: string;$/;"	p	interface:Discharge
+date	types.ts	/^  date: string;$/;"	p	interface:BaseEntry
+date	types.ts	/^  date: string;$/;"	p	interface:Discharge
+dateOfBirth	types.ts	/^  dateOfBirth?: string;$/;"	p	interface:Patient
+description	types.ts	/^  description: string;$/;"	p	interface:BaseEntry
+diagnosisCodes	types.ts	/^  diagnosisCodes?: Array<Diagnosis['code']>;$/;"	p	interface:BaseEntry
+discharge	types.ts	/^  discharge: Discharge;$/;"	p	interface:HospitalEntry
+employerName	types.ts	/^  employerName: string;$/;"	p	interface:OccupationalHealthcare
+endDate	types.ts	/^  endDate: string;$/;"	p	interface:SickLeave
+entries	types.ts	/^  entries: Entry[];$/;"	p	interface:Patient
+gender	types.ts	/^  gender: Gender;$/;"	p	interface:Patient
+healthCheckRating	types.ts	/^  healthCheckRating: HealthCheckRating;$/;"	p	interface:HealthCheck
+id	types.ts	/^  id: string;$/;"	p	interface:BaseEntry
+id	types.ts	/^  id: string;$/;"	p	interface:Patient
+latin	types.ts	/^  latin?: string;$/;"	p	interface:Diagnosis
+name	types.ts	/^  name: string;$/;"	p	interface:Diagnosis
+name	types.ts	/^  name: string;$/;"	p	interface:Patient
+occupation	types.ts	/^  occupation: string;$/;"	p	interface:Patient
+reducer	state/reducer.ts	/^export const reducer = (state: State, action: Action): State => {$/;"	C
+setCache	state/reducer.ts	/^export const setCache = (patient: Patient): Action => ({$/;"	C
+setDiagnosisList	state/reducer.ts	/^export const setDiagnosisList = (diagnosis: Diagnosis[]): Action => ({$/;"	C
+setPatientList	state/reducer.ts	/^export const setPatientList = (patientList: Patient[]): Action => ({$/;"	C
+sickLeave	types.ts	/^  sickLeave?: SickLeave;$/;"	p	interface:OccupationalHealthcare
+specialist	types.ts	/^  specialist: string;$/;"	p	interface:BaseEntry
+ssn	types.ts	/^  ssn?: string;$/;"	p	interface:Patient
+startDate	types.ts	/^  startDate: string;$/;"	p	interface:SickLeave
+type	types.ts	/^  type: 'HealthCheck';$/;"	p	interface:HealthCheck
+type	types.ts	/^  type: 'Hospital';$/;"	p	interface:HospitalEntry
+type	types.ts	/^  type: 'OccupationalHealthcare';$/;"	p	interface:OccupationalHealthcare
+type	types.ts	/^  type: string;$/;"	p	interface:BaseEntry
