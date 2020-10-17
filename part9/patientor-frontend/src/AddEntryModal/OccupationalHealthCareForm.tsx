@@ -3,28 +3,29 @@ import { Field, Formik, Form } from 'formik';
 import { Grid, Button } from 'semantic-ui-react';
 import { TextField, DiagnosisSelection, NumberField } from '../components/FormField';
 
-import { HospitalEntry, Diagnosis } from '../types';
+import { OccupationalHealthcare, Diagnosis } from '../types';
 
-export type HospitalEntryFormValues = Omit<HospitalEntry, 'id'>;
+export type OccupationalHealthcareValues = Omit<OccupationalHealthcare, 'id'>;
 
 interface Props {
-  onSubmit: (values: HospitalEntryFormValues) => void;
+  onSubmit: (values: OccupationalHealthcareValues) => void;
   onCancel: () => void;
   diagnoses: { [key: string]: Diagnosis };
 }
 
-export const AddHospitalEntryForm: React.FC<Props> = ({ onSubmit, onCancel, diagnoses }) => {
+export const OccupationalHealthcareForm: React.FC<Props> = ({ onSubmit, onCancel, diagnoses }) => {
   return (
     <Formik
       initialValues={{
-        type: 'Hospital',
+        type: 'OccupationalHealthcare',
         date: '',
-        discharge: {
-          date: '',
-          criteria: '',
-        },
         description: '',
         specialist: '',
+        employerName: '',
+        sickLeave: {
+          startDate: '',
+          endDate: ''
+        },
         diagnosisCodes: []
       }}
       onSubmit={onSubmit}
@@ -80,15 +81,21 @@ export const AddHospitalEntryForm: React.FC<Props> = ({ onSubmit, onCancel, diag
               diagnoses={Object.values(diagnoses)}
             />
             <Field
-              label="Discharge date"
+              label="SickLeave startDate"
               placeholder="1998-12-12"
-              name="discharge.date"
+              name="sickLeave.startDate"
               component={TextField}
             />
             <Field
-              label="Discharge criteria"
-              placeholder="criteria"
-              name="discharge.criteria"
+              label="SickLeave endDate"
+              placeholder="1998-12-12"
+              name="sickLeave.endDate"
+              component={TextField}
+            />
+            <Field
+              label="EmployerName"
+              placeholder="HyPD"
+              name="employerName"
               component={TextField}
             />
             <Grid>
@@ -115,5 +122,5 @@ export const AddHospitalEntryForm: React.FC<Props> = ({ onSubmit, onCancel, diag
   );
 };
 
-export default AddHospitalEntryForm;
+export default OccupationalHealthcareForm;
 

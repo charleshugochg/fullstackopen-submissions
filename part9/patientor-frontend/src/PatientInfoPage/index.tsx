@@ -15,6 +15,7 @@ const PatientInfoPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [{ cache }, dispatch] = useStateValue();
   const [patient, setPatient] = React.useState<Patient>();
+  const [type, setType] = React.useState<string>('Hospital');
   const [openModal, setOpenModal] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -53,10 +54,13 @@ const PatientInfoPage: React.FC = () => {
           </Container>
           <AddEntryModal
             id={id}
+            type={type}
             modalOpen={openModal}
             onClose={() => {setOpenModal(false);}}
           />
-          <Button onClick={() => setOpenModal(true)}>Add Entry</Button>
+          <Button onClick={() => {setType('Hospital');setOpenModal(true);}}>Add Hospital Entry</Button>
+          <Button onClick={() => {setType('HealthCheck');setOpenModal(true);}}>Add Health Check Entry</Button>
+          <Button onClick={() => {setType('OccupationalHealthcare');setOpenModal(true);}}>Add Occupational Healthcare Entry</Button>
         </div>
       )}
     </>
